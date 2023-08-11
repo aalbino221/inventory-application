@@ -1,3 +1,6 @@
+# Populate db file
+populatedb.js
+
 # Logs
 logs
 *.log
