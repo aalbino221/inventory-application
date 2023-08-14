@@ -6,6 +6,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
+const http = require('http');
 
 mongoose.set('strictQuery', false);
 const mongoDB = `mongodb+srv://${process.env.SECRET_USER}:${process.env.SECRET_PASS}@cluster0.nfqh7wx.mongodb.net/inventory-application?retryWrites=true&w=majority`;
@@ -46,6 +47,13 @@ app.use(function (err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+});
+
+const port = process.env.PORT || 5000;
+const server = http.createServer(app);
+
+server.listen(port, () => {
+  console.log(`Server started on port:${port}`);
 });
 
 module.exports = app;
