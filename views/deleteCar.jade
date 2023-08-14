@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  div.flex.w-1-2.mx-auto.my-20.justify-between.flex-col
+    div
+      p.text-blue-700.text-lg.font-bold remove
+      div.flex.items-center.justify-between.mb-5
+        p.text-6xl.font-medium.pr-28 Remove Car: #{car._id}
+      form(action="" method="POST")
+          button(type="submit").bg-red-600.text-white.font-bold.py-1.px-7.rounded.mr-5 Remove
+      

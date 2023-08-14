@@ -7,8 +7,10 @@ block content
       div.flex.items-center.justify-between
         p.text-6xl.font-medium.pr-28 Browse By:
         img(src="/images/car(2).png", alt="").w-40
-      button.bg-blue-600.text-white.font-bold.py-1.px-7.rounded.mr-5 categorie
-      button.bg-blue-600.text-white.font-bold.py-1.px-7.rounded year
+      a(href="/browse/categories") 
+        button.bg-blue-600.text-white.font-bold.py-1.px-7.rounded.mr-5 categorie
+      a(href="/browse/year") 
+        button.bg-blue-600.text-white.font-bold.py-1.px-7.rounded year
 
     div.mt-20
       each car in carList 

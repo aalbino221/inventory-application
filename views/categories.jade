@@ -13,7 +13,7 @@ block content
     div.mt-20
       p.font-medium.text-3xl.font-bold Categories
       each category in categoriesList
-        a(href=`/${category.url}`)
+        a(href=`${category.url}`)
           div.border.flex.justify-between.items-center.py-1.px-5.text-gray-700.mt-5.border-black.border-opacity-20
             div.grid.grid-rows-2
               p #{category.name}

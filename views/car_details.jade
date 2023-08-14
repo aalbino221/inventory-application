@@ -12,7 +12,8 @@ block content
         p Price: USD #{car.price}
         a(href=`/cars/update/${car._id}`) 
           button.bg-blue-600.text-white.font-bold.py-1.px-7.rounded.mt-5.mr-5 Update
-        button.bg-red-600.text-white.font-bold.py-1.px-7.rounded.mt-5 Delete
+        a(href=`/cars/remove/${car._id}`) 
+          button.bg-red-600.text-white.font-bold.py-1.px-7.rounded.mt-5 Delete
       img(src=car.imgUrl, alt="").w-1-2.p-10.h-1-2
 
 

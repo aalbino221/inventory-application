@@ -3,7 +3,7 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/output.css')
-  body.font-mono.tracking-tight.leading-tight
+  body.font-mono.tracking-tight.leading-tight.flex.flex-col.min-h-screen
     navbar.bg-black.bg-opacity-80.w-100.flex.justify-center.text-white.p-2.font-semibold.sticky.top-0
       div.w-29-50.flex.justify-between
         a(href="/").text-lg DriveCar
@@ -12,4 +12,9 @@ html
           a(href="/categories") Categories
           a(href="/browse") Browse
           a(href="/new/car") Create
-    block content
+    div.flex-grow
+      block content
+
+    footer.bg-white.rounded-lg.flex.justify-center.bottom-0.w-full.p-4
+      span.block.text-sm.text-gray-500.sm-text-center.dark-text-gray-400
+        a(href="https://github.com/aalbino221/" class="hover:underline") ©2023 aalbino221

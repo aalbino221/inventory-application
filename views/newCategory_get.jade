@@ -4,14 +4,14 @@ block content
   a(href="/new/car") 
     button.bg-blue-500.hover.text-white.font-bold.py-2.px-4.rounded.focus.flex.mx-auto.my-5(type="button") Create Car
   div.flex.w-1-2.mx-auto.my-10.justify-between.flex-col
-    form.bg-white.shadow-md.rounded.px-8.pt-6.pb-8.mb-4
+    form(action= "" method="POST").bg-white.shadow-md.rounded.px-8.pt-6.pb-8.mb-4
       p.text-blue-700.font-bold.text-3xl.mb-4 New Category
       div.mb-6
-        label.block.text-gray-700.text-sm.font-bold.mb-2(for="username") Name:
-        input.shadow.appearance-none.border.rounded.w-full.py-2.px-3.text-gray-700.leading-tight.focus(id="username" type="text" placeholder="Category Name")
+        label.block.text-gray-700.text-sm.font-bold.mb-2(for="name") Name:
+        input.shadow.appearance-none.border.rounded.w-full.py-2.px-3.text-gray-700.leading-tight.focus(id="name" name="name" type="text" placeholder="Category Name" required minlength="3" value= (undefined == category ? '' : category.name))
       div.mb-6
         label.block.text-gray-700.text-sm.font-bold.mb-2(for="description") Description:
-        textarea.shadow.appearance-none.border.rounded.w-full.py-2.px-3.text-gray-700.leading-tight.focus.resize-none(id="description" type="text" placeholder="Description"  cols="30", rows="6")
+        textarea.shadow.appearance-none.border.rounded.w-full.py-2.px-3.text-gray-700.leading-tight.focus.resize-none(id="description" name="description" type="text" placeholder="Description"  cols="30", rows="6" required minlength="3" value= (undefined == category ? '' : category.description))
       div.flex.items-center.justify-between
-        button.bg-blue-500.hover.text-white.font-bold.py-2.px-4.rounded.focus(type="button") Create
+        button.bg-blue-500.hover.text-white.font-bold.py-2.px-4.rounded.focus(type="submit") Create
         a.inline-block.align-baseline.font-bold.text-sm.text-blue-500.hover(href="/") Back

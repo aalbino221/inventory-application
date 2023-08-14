@@ -8,7 +8,7 @@ const CarSchema = new Schema({
   year: { type: Number, required: true },
   price: { type: Number, required: true },
   imgUrl: { type: String },
-  added: { type: Date, required: true },
+  added: { type: Date },
 });
 
 CarSchema.virtual('url').get(function () {
