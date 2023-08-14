@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  div.flex.w-1-2.mx-auto.my-10.justify-between.flex-col
+    p.text-blue-700.text-lg.font-bold.mb-5 #{car.name}
+    div.flex.items-center
+      div.w-1-2
+        p.text-3xl.font-medium.pr-28.text-center #{car.name}
+        p.mt-5 #{car.description}
+        p Year: #{car.year}
+        p Category: #{car.category.name}
+        p Price: USD #{car.price}
+        a(href=`/cars/update/${car._id}`) 
+          button.bg-blue-600.text-white.font-bold.py-1.px-7.rounded.mt-5.mr-5 Update
+        button.bg-red-600.text-white.font-bold.py-1.px-7.rounded.mt-5 Delete
+      img(src=car.imgUrl, alt="").w-1-2.p-10.h-1-2
+
+
+    

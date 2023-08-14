@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  div.flex.w-1-2.mx-auto.my-20.justify-between.flex-col
+    div
+      p.text-blue-700.text-lg.font-bold browse
+      div.flex.items-center.justify-between
+        p.text-6xl.font-medium.pr-28 Browse By:
+        img(src="/images/car(2).png", alt="").w-40
+      button.bg-blue-600.text-white.font-bold.py-1.px-7.rounded.mr-5 categorie
+      button.bg-blue-600.text-white.font-bold.py-1.px-7.rounded year
+
+    div.mt-20
+      each car in carList 
+        a(href=`${car.url}`) 
+          div.flex.border.border-black.border-opacity-20.mt-5.letter
+            img(src=car.imgUrl, alt="").w-1-4.p-7
+            div.w-100.text-sm.py-3.px-3.flex.flex-col.justify-between
+              p.font-bold.text-xl #{car.name}
+              p
+                - const maxWords = 40; // Defina o limite máximo de palavras
+                - const words = car.description.split(' ');
+                - const truncatedDescription = words.slice(0, maxWords).join(' ');
+                = truncatedDescription
+                - if (words.length > maxWords)
+                  | ...
+              div.flex.gap-5
+                p Category:#{car.category.name}
+                p Year:#{car.year}
+                p Price:USD #{car.price}
+      else 
+        p No Cars
+    
+   

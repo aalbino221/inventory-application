@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  div.flex.w-1-2.mx-auto.my-20.justify-between.flex-col
+    div
+      p.text-blue-700.text-lg.font-bold categories
+      div.flex.items-center
+        p.text-6xl.font-medium.pr-28 Browse categories and create new ones!
+        img(src="/images/car(2).png", alt="").w-44
+      a(href="/new/category") 
+        button.bg-blue-600.text-white.font-bold.py-1.px-7.rounded Create 
+
+    div.mt-20
+      p.font-medium.text-3xl.font-bold Categories
+      each category in categoriesList
+        a(href=`/${category.url}`)
+          div.border.flex.justify-between.items-center.py-1.px-5.text-gray-700.mt-5.border-black.border-opacity-20
+            div.grid.grid-rows-2
+              p #{category.name}
+              div.flex.gap-2
+                img(src="/images/icon.png", alt="car icon").h-6
+                p #{category.count}
+            img(src="/images/arrow-right.png", alt="").h-6
+      else 
+        p Nothing ound
+    
+   

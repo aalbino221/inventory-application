@@ -3,13 +3,13 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/output.css')
-  body.font-mono
-    navbar.bg-black.bg-opacity-80.w-100.flex.justify-center.text-white.p-2.font-semibold
+  body.font-mono.tracking-tight.leading-tight
+    navbar.bg-black.bg-opacity-80.w-100.flex.justify-center.text-white.p-2.font-semibold.sticky.top-0
       div.w-29-50.flex.justify-between
         a(href="/").text-lg DriveCar
         div.flex.justify-between.gap-10.text-sm.items-center
           a(href="/") Home
           a(href="/categories") Categories
           a(href="/browse") Browse
-          a(href="/categories") Create
+          a(href="/new/car") Create
     block content

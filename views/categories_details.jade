@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  div.flex.w-1-2.mx-auto.my-10.justify-between.flex-col
+    div
+      p.text-blue-700.text-lg.font-bold.mb-5 #{info.name}
+      p.text-6xl.font-medium.pr-28 #{info.name}
+      p.mt-5 #{info.description}
+      a(href=`/categories/update/${info._id}`) 
+        button.bg-blue-600.text-white.font-bold.py-1.px-7.rounded.mt-5.mr-5 Update
+      button.bg-red-600.text-white.font-bold.py-1.px-7.rounded.mt-5 Delete
+
+    div.mt-10
+      p.font-medium.text-3xl.font-bold Car List
+      a(href="/new/car") 
+        button.bg-blue-600.text-white.font-bold.py-2.px-7.rounded.mt-5.mr-5.w-full New Car
+      each car in carList 
+        a(href=`${car.url}`) 
+          div.flex.border.border-black.border-opacity-20.mt-5.letter
+            img(src=car.imgUrl, alt="").w-1-4.p-7
+            div.w-100.text-sm.py-3.px-3
+              p.font-bold.text-xl #{car.name}
+              p #{car.description}
+              div.flex.gap-5
+                p Category:#{car.category.name}
+                p Year:#{car.year}
+                p Price:USD #{car.price}
+
+
+    
